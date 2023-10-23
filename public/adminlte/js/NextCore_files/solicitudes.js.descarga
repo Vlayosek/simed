@@ -1,0 +1,809 @@
+var id = 1;
+$(document).ready(function () {
+    $(function () {
+        $("#Modalagregar").hide();
+        changeDatatable();
+        $("#natural").hide();
+        $("#natural_domicilio").hide();
+        $("#juridico").hide();
+        $("#debito").hide();
+        $("#tarjeta").hide();
+        $("#contrafactura").hide();
+        $("#dato_solicitud").hide();
+        $("#dato_observacion").hide();
+        $("#dato_laborales").hide();
+        $("#domicilio_entrega").hide();
+        $("#dato_observacion2").hide();
+        $("#btnGuardar2").hide();
+        $("#btnGuardar").show();
+
+    });
+});
+
+$('input[name^="identificacion"]').blur(function () {
+    var verifica = valida($('input[name^="identificacion"]').val());
+    showVerifica(verifica, 0);
+});
+$('input[name^="identificacion"]').on('keydown', function (e) {
+    if ((e.which === 9) || (e.which === 13)) {
+        var verifica = valida($('input[name^="identificacion"]').val());
+        showVerifica(verifica, 0);
+    }
+});
+
+$("#btnGuardar2").on('click', function () {
+    $("#btnGuardar2").hide();
+    $("#btnGuardar").show();
+});
+$("#btnGuardar").on('click', function () {
+    $("#btnGuardar2").show();
+    $("#btnGuardar").hide();
+    var lineas = [];
+    var dato_natural = [];
+    var dato_laborales = [];
+    var dato_entrega = [];
+    var banco = [];
+    var tarjeta = [];
+    var dato_juridico = [];
+
+    var identificacion = $('input[name^="identificacion"]').val();
+    var tipo_persona = $('input[name^="tipo_persona"]').val();
+
+    //-----------------------------------------------------------
+    var observacion = $('input[name^="observacion"]').val();
+    var gestor = $('select[name^="gestor"]').val();
+
+
+//-natural----------------------------------------------------------
+    $('input[name^="add"]').each(function () {
+        lineas.push($(this).val());
+    });
+    $('select[name^="add"]').each(function () {
+        lineas.push($(this).val());
+    });
+//-natural----------------------------------------------------------
+    $('input[name^="dato_natural"]').each(function () {
+        dato_natural.push($(this).val());
+    });
+    $('select[name^="dato_natural"]').each(function () {
+        dato_natural.push($(this).val());
+    });
+    $('input[name^="dato_natural"]').each(function () {
+        dato_natural.push($(this).val());
+    });
+//-dato_laborales----------------------------------------------------------
+    $('input[name^="dato_laborales"]').each(function () {
+        dato_laborales.push($(this).val());
+    });
+    $('select[name^="dato_laborales"]').each(function () {
+        dato_laborales.push($(this).val());
+    });
+    $('input[name^="dato_laborales"]').each(function () {
+        dato_laborales.push($(this).val());
+    });
+//--dato_entrega---------------------------------------------------------
+    $('input[name^="dato_entrega"]').each(function () {
+        dato_entrega.push($(this).val());
+    });
+    $('select[name^="dato_entrega"]').each(function () {
+        dato_entrega.push($(this).val());
+    });
+//---dato_juridico--------------------------------------------------------
+    $('input[name^="dato_juridico"]').each(function () {
+        dato_juridico.push($(this).val());
+    });
+//---banco--------------------------------------------------------
+    $('select[name^="banco"]').each(function () {
+        banco.push($(this).val());
+    });
+    $('input[name^="banco"]').each(function () {
+        banco.push($(this).val());
+    });
+//---tarjeta--------------------------------------------------------
+    $('input[name^="tarjeta"]').each(function () {
+        tarjeta.push($(this).val());
+    });
+    var f=0;
+    var b=0;
+    if(banco[0]=="")
+    {
+        f=1;
+    }
+    if(tarjeta[0]=="")
+    {
+        b=1;
+    }
+    //-Contrafactura----------------------------------------------------------
+    var forma_pago = $('select[name^="forma_pago"]').val();
+    var valor_garantia = $('input[name^="valor_garantia"]').val();
+
+    //---solicitud--------------------------------------------------------
+    var solicitud = $('input[name^="n_solicitud"]').val();
+    var tobsequios = $('input[name^="tobsequios"]').val();
+    var tlineas = $('input[name^="tlineas"]').val();
+    var tchip = $('input[name^="tchip"]').val();
+    var pago = [];
+    var pago1 = [];
+    switch (forma_pago) {
+        case 'DEBITO_BANCARIO':
+            pago = banco;
+            pago1 = null;
+            break;
+        case 'TARJETA_CREDITO':
+            pago = tarjeta;
+            pago1 = null;
+            break;
+        case 'CONTRAFACTURA':
+            pago = banco;
+            pago1 = tarjeta;
+            break;
+    }
+    switch (tipo_persona) {
+        case 'JURIDICO':
+            console.log(identificacion, tipo_persona, dato_juridico, dato_entrega, dato_laborales, solicitud, tlineas, tobsequios, tchip, observacion, gestor,forma_pago);
+            break;
+        default :
+            console.log(identificacion, tipo_persona, dato_natural, dato_entrega, dato_laborales,solicitud, tlineas, tobsequios, tchip, observacion, gestor,forma_pago);
+            break;
+    }
+    if (f==1) {
+
+        console.log( pago);
+
+    }
+    if (b==1) {
+
+        console.log( pago1);
+
+    }
+    if (valor_garantia != 0) {
+        console.log(valor_garantia);
+    }
+
+    console.log(lineas);
+
+});
+var sstyle=' border:1px solid #d2d6de;\n' +
+    '        border-radius: 10px;\n' +
+    '        padding:6px 12px;\n' +
+    '        height:34px;';
+function Add() {
+
+    $("#item").append(
+        "<div  style='margin:2px'>"+
+        "<div class='col-lg-12' style='margin:10px' name='addditem[" + id + "]'>" +
+        "<div class='col-lg-2' name='adddtipo_solicitud[" + id + "]'>" +
+        "<select class='form-control select2' style='border-radius: 10px' name='addtipo_solicitud[" + id + "]' onchange='obtienedatos(" + id + ")'>" +
+        "<option class='form-control select2' value='0'>Seleccione un tipo de solicitud" +
+        "</option>" +
+        "<option class='form-control select2' value='Linea_Nueva'>Linea Nueva" +
+        "</option>" +
+        "<option class='form-control select2' value='Migracion'>Migracion" +
+        "</option>" +
+        "<option class='form-control select2' value='Transferencia_Beneficiario'>Transferencia Beneficiario" +
+        "</option>" +
+        "<option class='form-control select2' value='Portabilidad'>Portabilidad" +
+        "</option>" +
+        "</select>" +
+        "</div>" +
+        "<div class='col-lg-2' name='adddcelular[" + id + "]''>" +
+        "<input class='form-control' type='text' name='addcelular[" + id + "]' placeholder='Celular' maxlength='10' onKeypress='if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;'>" +
+        "</div>" +
+        "<div class='col-lg-2' name='adddoperadora[" + id + "]'>" +
+        "<select class='form-control select2' style='border-radius: 10px' name='addoperadora[" + id + "]'>" +
+        "<option class='form-control select2' value='0'>Operadora" +
+        "</option>" +
+        "<option class='form-control select2' value='Claro'>Claro" +
+        "</option>" +
+        "<option class='form-control select2' value='Movistar'>Movistar" +
+        "</option>" +
+        "<option class='form-control select2' value='Cnt'>Cnt" +
+        "</option>" +
+        "<option class='form-control select2' value='Twenty'>Twenty" +
+        "</option>" +
+        "</select>" +
+        "</div>" +
+        "<div class='col-lg-2' name='adddtipo_linea[" + id + "]'>" +
+        "<select class='form-control select2' style='border-radius: 10px' name='addtipo_linea[" + id + "]'>" +
+        "<option class='form-control select2' value='0'>Linea" +
+        "</option>" +
+        "<option class='form-control select2' value='Prepago'>Prepago" +
+        "</option>" +
+        "<option class='form-control select2' value='Pospago'>Pospago" +
+        "</option>" +
+        "<option class='form-control select2' value='Migracion'>Migracion" +
+        "</option>" +
+        "</select>" +
+        "</div>" +
+        "<div class='col-lg-1'name='addconsultaequipo[" + id + "]'>" +
+        "<label style='padding-left:5px;padding-right:5px;' name='addlabelequipo[" + id + "]'>Equipo</label> " +
+        "<input type='checkbox' name='addequipo[" + id + "]' onclick='checkequipo(" + id + ")'>" +
+        "</div>" +
+        "<div class='col-lg-1' name='adddmarca[" + id + "]'>" +
+        "<input class='form-control' type='text'  name='addmarca[" + id + "]' placeholder='marca' >" +
+        "</div>" +
+        "<div class='col-lg-1' name='adddmodelo[" + id + "]'>" +
+        "<input class='form-control' type='text'  name='addmodelo[" + id + "]' placeholder='modelo' >" +
+        "</div>" +
+        "</div>"+
+        "<div style='margin:2px'>"+
+        "<div class='col-lg-12' name='adddselectbp[" + id + "]'>" +
+        "<div class='col-lg-2' name='addselectbp[" + id + "]'>" +
+        "<select class='form-control select2' style='border-radius: 10px' name='addbp[" + id + "]' onchange='obtienedatoselect(" + id + ")'>" +
+        "</select>" +
+        "</div>" +
+
+        "<div class='col-lg-2' name='addconsultabp[" + id + "]'>" +
+        "<input class='form-control' type='text' name='addplan[" + id + "]' placeholder='Plan' disabled>" +
+        "</div>" +
+        "<div class='col-lg-2' name='addconsultatb[" + id + "]' >" +
+        "<input class='form-control' type='text'  name='addtb[" + id + "]' placeholder='Tarifa' disabled>" +
+        "</div>" +
+        "<div class='col-lg-2'name='addconsultacuota[" + id + "]' >" +
+        "<input class='form-control' type='text' maxlength='5'  onKeypress='if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;' name='addcuota[" + id + "]' id='addcuota[" + id + "]' placeholder='Cuota'>" +
+        "</div>" +
+
+        "<div class='col-lg-2' name='addconsultaobsequio[" + id + "]' style='padding-right:0px!important;'>" +
+        "<select class='form-control select2' style='border-radius: 10px' name='addobsequio[" + id + "]'>" +
+        "<option class='form-control select2' value='0'>Obsequio" +
+        "</option>" +
+        "<option class='form-control select2' value='1'>Agenda Guayaquil " +
+        "</option>" +
+        "<option class='form-control select2' value='2'>Spinner" +
+        "</option>" +
+        "<option class='form-control select2' value='3'>Tasa" +
+        "</option>" +
+        "</select>" +
+        "</div>" +
+        "<div class='col-lg-1'name='addconsultacob[" + id + "]' >" +
+        "<input class='form-control' type='number' maxlength='1' min='0' max='2'  value='0' onKeypress='if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;' name='addcantob[" + id + "]' placeholder='Cant' onchange='cantidadOb()'>" +
+        "</div>" +
+        "<div class='col-lg-1' name='addborra[" + id + "]'>" +
+        "<span onclick='borraitem(" + id + ")' name='addborraspan[" + id + "]' class='btn btn-danger btn-xs'><i class='glyphicon glyphicon-trash'></i></span>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+        "<div style='margin:2px'>" +
+        "<div name='addddonante[" + id + "]'>" +
+        "<div class='col-lg-3' name='adddcidonante[" + id + "]''>" +
+        "<input class='form-control' type='text' name='addcidonante[" + id + "]' placeholder='Cedula Donante' maxlength='10' onKeypress='if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;'>" +
+        "</div>" +
+        "<div class='col-lg-3' name='adddnombredonante[" + id + "]''>" +
+        "<input class='form-control' type='text' name='addnombredonante[" + id + "]' placeholder='Nombre Donante'>" +
+        "</div>" +
+        "<div class='col-lg-3' name='addddirecciondonante[" + id + "]''>" +
+        "<input class='form-control' type='text' name='adddirecciondonante[" + id + "]' placeholder='Direccion Donante'>" +
+        "</div>" +
+        "<div class='col-lg-2' name='adddcelulardonante[" + id + "]''>" +
+        "<input class='form-control' type='text' name='adddcelulardonante[" + id + "]' placeholder='Celular Donante' maxlength='10' onKeypress='if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;'>" +
+        "</div>" +
+        "</div>" +
+        "<div name='adddrl[" + id + "]'>" +
+        "<div class='col-lg-3' name='adddctarl[" + id + "]''>" +
+        "<input class='form-control' type='text' name='addctarl[" + id + "]' placeholder='N° Cuenta' maxlength='10' onKeypress='if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;'>" +
+        "</div>" +
+        "<div class='col-lg-3' name='adddcirl[" + id + "]''>" +
+        "<input class='form-control' type='text' name='addcirl[" + id + "]' placeholder='Cedula RL' maxlength='10' onKeypress='if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;'>" +
+        "</div>" +
+        "<div class='col-lg-3' name='adddnombrerl[" + id + "]''>" +
+        "<input class='form-control' type='text' name='addnombrerl[" + id + "]' placeholder='Nombre RL'>" +
+        "</div>" +
+        "<div class='col-lg-2' name='adddcargorl[" + id + "]''>" +
+        "<input class='form-control' type='text' name='addcargorl[" + id + "]' placeholder='Cargo RL'>" +
+        "</div>" +
+
+        "</div>" +
+
+        "</div>" +
+
+        "</div>"
+
+    );
+    $('Div[name="addddonante[' + id + ']"]').hide();
+    $('Div[name="adddrl[' + id + ']"]').hide();
+
+    configuracionBP(id, 'bp', 'BP');
+    $('Input[name="addmarca[' + id + ']"]').hide();
+    $('Input[name="addmodelo[' + id + ']"]').hide();
+
+    cantidadLineas();
+    id++;
+}
+
+function showVerifica(verifica, id) {
+    switch (verifica) {
+        case 2:
+            reset();
+            $('input[name^="tipo_persona"]').val('PUBLICO');
+            $("#natural").show();
+            $("#natural_domicilio").show();
+            $("#juridico").hide();
+            $("#dato_solicitud").show();
+            $("#dato_observacion").show();
+            $("#dato_laborales").show();
+            $("#domicilio_entrega").show();
+            $("#dato_observacion2").show();
+
+            todoBorrado();
+
+            break;
+        case 3:
+            reset();
+            $('input[name^="tipo_persona"]').val('JURIDICO');
+            $("#natural").hide();
+            $("#natural_domicilio").hide();
+            $("#juridico").show();
+            $("#dato_solicitud").show();
+            $("#dato_observacion").show();
+            $("#dato_laborales").show();
+            $("#domicilio_entrega").show();
+            $("#dato_observacion2").show();
+
+            todoBorrado();
+
+            break;
+        case 4:
+            reset();
+            $('input[name^="tipo_persona"]').val('NATURAL');
+            $("#natural").hide();
+            $("#natural_domicilio").hide();
+            $("#juridico").show();
+            $("#dato_solicitud").show();
+            $("#dato_observacion").show();
+            $("#dato_laborales").show();
+            $("#domicilio_entrega").show();
+            $("#dato_observacion2").show();
+
+            todoBorrado();
+
+            break;
+        case 5:
+            reset();
+            $('input[name^="tipo_persona"]').val('CEDULA');
+            $("#natural").show();
+            $("#natural_domicilio").show();
+            $("#juridico").hide();
+            $("#dato_solicitud").show();
+            $("#dato_observacion").show();
+            $("#dato_laborales").show();
+            $("#domicilio_entrega").show();
+            $("#dato_observacion2").show();
+
+            todoBorrado();
+            break;
+        default:
+            $('input[name^="tipo_persona"]').val('Tipo Persona');
+            $('input[name^="identificacion"]').val('');
+            reset();
+            todoBorrado();
+
+            break;
+    }
+
+}
+
+function reset() {
+
+    $("#natural").hide();
+    $("#natural_domicilio").hide();
+    $("#juridico").hide();
+    $("#dato_solicitud").hide();
+    $("#dato_observacion").hide();
+    $("#dato_laborales").hide();
+    $("#domicilio_entrega").hide();
+    $("#dato_observacion2").hide();
+
+
+    $('input[name^="dato_natural"]').val('');
+
+    //-Contrafactura----------------------------------------------------------
+
+    var valor_garantia = $('input[name^="valor_garantia"]').val('');
+    //-----------------------------------------------------------
+    var observacion = $('input[name^="observacion"]').val('');
+
+
+//-natural----------------------------------------------------------
+    $('input[name^="dato_natural"]').val('');
+    $('input[name^="dato_natural"]').val('');
+//-dato_laborales----------------------------------------------------------
+    $('input[name^="dato_laborales"]').val('');
+    $('input[name^="dato_laborales"]').val('');
+//--dato_entrega---------------------------------------------------------
+    $('input[name^="dato_entrega"]').val('');
+//---dato_juridico--------------------------------------------------------
+    $('input[name^="dato_juridico"]').val('');
+//---banco--------------------------------------------------------
+    $('input[name^="banco"]').val('');
+//---tarjeta--------------------------------------------------------
+    $('input[name^="tarjeta"]').val('');
+    //---solicitud--------------------------------------------------------
+    $('input[name^="solicitud"]').val('');
+
+}
+
+function todoBorrado() {
+    $("#contrafactura").hide();
+    $("#debito").hide();
+    $("#tarjeta").hide();
+    $('Input[name^="add"]').remove();
+    $('select[name^="add"]').remove();
+    $('Div[name^="add"]').remove();
+    $('Input[name="tlineas"]').val(0);
+    $('Input[name="tobsequios"]').val(0);
+    $('Input[name="tchip"]').val(0);
+}
+
+function configuracionBP(i, dato, parametro) {
+    var objApiRest = new AJAXRest('/asesor/ConfiguracionBP', {parametro: parametro}, 'post');
+    objApiRest.extractDataAjax(function (_resultContent) {
+        if (_resultContent.status == 200) {
+            $('select[name="add' + dato + '[' + i + ']"]').append("<option value='0'>* " + parametro + " *</option>");
+            $.each(_resultContent.message, function (_key, _value) {
+                $('select[name="add' + dato + '[' + i + ']"]').append("<option value='" + _value.id + "'>" + _value.descripcion + "</option>")
+            });
+        } else {
+            alertToast(_resultContent.message, 3500);
+        }
+    });
+}
+
+function cantidadLineas() {
+    var idm = $('Input[name="tlineas"]').val();
+    idm++;
+    $('Input[name="tlineas"]').val(idm);
+}
+
+function cantidadOb() {
+    var cantob = 0;
+    $('input[name^="addcantob"]').each(function () {
+
+        cantob = parseInt(($(this).val())) + parseInt(cantob);
+    });
+    $('Input[name="tobsequios"]').val(parseInt(cantob));
+}
+
+function borraitem(id) {
+    $('Input[name$="[' + id + ']"]').remove();
+    $('select[name$="[' + id + ']"]').remove();
+    $('Div[name$="[' + id + ']"]').remove();
+    var idr = $('Input[name="tlineas"]').val();
+    idr--;
+    $('Input[name="tlineas"]').val(idr);
+    cantidadOb();
+    obtienedatos()
+}
+
+function checkequipo(id) {
+    if ($('Input[name="addequipo[' + id + ']"]:checked').val() == "on") {
+        $('Input[name="addmarca[' + id + ']"]').show();
+        $('Input[name="addmodelo[' + id + ']"]').show();
+    } else {
+
+        $('Input[name="addmarca[' + id + ']"]').hide();
+        $('Input[name="addmodelo[' + id + ']"]').hide();
+    }
+
+}
+
+function obtenerdatosvalores(id, dato) {
+    var dato1 = dato;
+    var objApiRest1 = new AJAXRest('/asesor/ConfiguracionPlan2', {dato1: dato1}, 'post');
+    objApiRest1.extractDataAjax(function (_resultContent) {
+        if (_resultContent.status == 200) {
+            $.each(_resultContent.message, function (_key, _value) {
+                $('Input[name="addtb[' + id + ']"]').val(_value.descripcion);
+
+            });
+
+        } else {
+            $('Input[name="addtb[' + id + ']"]').val(0);
+
+            alertToast(_resultContent.message, 3500);
+
+        }
+    });
+
+
+}
+
+function obtienedatoselect(id) {
+    $('Input[name="addplan[' + id + ']"]').val('');
+    $('Input[name="addtb[' + id + ']"]').val('');
+    var dato = $('select[name="addbp[' + id + ']"]').val();
+    var objApiRest = new AJAXRest('/asesor/ConfiguracionPlan', {dato: dato}, 'post');
+    objApiRest.extractDataAjax(function (_resultContent) {
+        if (_resultContent.status == 200) {
+            $.each(_resultContent.message, function (_key, _value) {
+                $('Input[name="addplan[' + id + ']"]').val(_value.descripcion);
+                $('Input[name="addplanh[' + id + ']"]').val(_value.id);
+                obtenerdatosvalores(id, _value.id);
+            });
+
+
+        } else {
+
+            alertToast(_resultContent.message, 3500);
+
+        }
+    });
+}
+
+function obtienedatos(id) {
+    if ($('select[name^="addtipo_solicitud[' + id + ']"]').val() == 'Transferencia_Beneficiario') {
+        $('Div[name="addddonante[' + id + ']"]').show();
+        $('Div[name="adddrl[' + id + ']"]').show();
+    }
+    else {
+        $('Div[name="addddonante[' + id + ']"]').hide();
+        $('Div[name="adddrl[' + id + ']"]').hide();
+
+    }
+    var tipo_solicitud = [];
+    $('select[name^="addtipo_solicitud"]').each(function () {
+        tipo_solicitud.push($(this).val());
+    });
+    switch ($('select[name^="forma_pago"]').val()) {
+        case "DEBITO_BANCARIO":
+
+            $("#contrafactura").hide();
+            $("#tarjeta").hide();
+            $("#debito").show();
+            break;
+        case "TARJETA_CREDITO":
+            $("#contrafactura").hide();
+            $("#tarjeta").show();
+            $("#debito").hide();
+            break;
+        case "CONTRAFACTURA":
+            $("#tarjeta").show();
+            $("#debito").show();
+            if (tipo_solicitud.includes('Migracion') == true) {
+                $("#contrafactura").show();
+            }
+            else {
+                $("#contrafactura").hide();
+            }
+            break;
+        default:
+            $("#contrafactura").hide();
+            $("#tarjeta").hide();
+            $("#debito").hide();
+            break;
+    }
+}
+
+function changeDatatable() {
+    $('#dtmenu').DataTable().destroy();
+    $('#tbobymenu').html('');
+
+    $('#dtmenu').show();
+    $.fn.dataTable.ext.errMode = 'throw';
+    $('#dtmenu').DataTable(
+        {
+            dom: 'lBfrtip',
+            buttons: [
+                'colvis', 'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            responsive: true, "oLanguage":
+                {
+                    "sUrl": "/js/config/datatablespanish.json"
+                },
+            "lengthMenu": [[10], [10]],
+            "order": [[1, 'desc']],
+            "searching": true,
+            "info": false,
+            "ordering": false,
+            "bPaginate": true,
+            "processing": true,
+            "serverSide": true,
+            "deferRender": true,
+            "destroy": true,
+            "ajax": "/asesor/datatableDepartamento/",
+            "columns": [
+
+                {data: 'Contacto', "width": "10%"},
+                {data: 'Cliente', "width": "25%"},
+                {data: 'Solicitud', "width": "15%"},
+                {data: 'Asesor', "width": "10%"},
+                {data: 'Fecha_c', "width": "10%"},
+                {data: 'Fecha_e', "width": "10%"},
+                {data: 'Estado', "width": "10%"},
+                {
+                    data: 'actions',
+                    "width": "5%",
+                    "bSortable": false,
+                    "searchable": false,
+                    "targets": 0,
+                    "render": function (data, type, row) {
+                        return $('<div />').html(row.actions).text();
+                    }
+                }
+            ],
+
+        }).ajax.reload();
+
+
+}
+
+function valida(campo) {
+    var numero = campo;
+    var suma = 0;
+    var residuo = 0;
+    var ju = false;
+    var pub = false;
+    var nat = false;
+    var numeroProvincias = 22;
+    var modulo = 11;
+
+    d1 = numero.substr(0, 1);
+    d2 = numero.substr(1, 1);
+    d3 = numero.substr(2, 1);
+    d4 = numero.substr(3, 1);
+    d5 = numero.substr(4, 1);
+    d6 = numero.substr(5, 1);
+    d7 = numero.substr(6, 1);
+    d8 = numero.substr(7, 1);
+    d9 = numero.substr(8, 1);
+    d10 = numero.substr(9, 1);
+
+    /* El tercer digito es: */
+    /* 9 para sociedades privadas y extranjeros */
+    /* 6 para sociedades publicas */
+    /* menor que 6 (0,1,2,3,4,5) para personas naturales */
+
+    if (d3 == 7 || d3 == 8) {
+        alert('El tercer dígito ingresado es inválido');
+    }
+
+    /* Solo para personas naturales (modulo 10) */
+    if (d3 < 6) {
+        nat = true;
+        p1 = d1 * 2;
+        if (p1 >= 10) p1 -= 9;
+        p2 = d2 * 1;
+        if (p2 >= 10) p2 -= 9;
+        p3 = d3 * 2;
+        if (p3 >= 10) p3 -= 9;
+        p4 = d4 * 1;
+        if (p4 >= 10) p4 -= 9;
+        p5 = d5 * 2;
+        if (p5 >= 10) p5 -= 9;
+        p6 = d6 * 1;
+        if (p6 >= 10) p6 -= 9;
+        p7 = d7 * 2;
+        if (p7 >= 10) p7 -= 9;
+        p8 = d8 * 1;
+        if (p8 >= 10) p8 -= 9;
+        p9 = d9 * 2;
+        if (p9 >= 10) p9 -= 9;
+        modulo = 10;
+    }
+
+    /* Solo para sociedades publicas (modulo 11) */
+    /* Aqui el digito verficador esta en la posicion 9, en las otras 2 en la pos. 10 */
+    else if (d3 == 6) {
+        pub = true;
+        p1 = d1 * 3;
+        p2 = d2 * 2;
+        p3 = d3 * 7;
+        p4 = d4 * 6;
+        p5 = d5 * 5;
+        p6 = d6 * 4;
+        p7 = d7 * 3;
+        p8 = d8 * 2;
+        p9 = 0;
+    }
+
+    /* Solo para entidades privadas (modulo 11) */
+    else if (d3 == 9) {
+        ju = true;
+        p1 = d1 * 4;
+        p2 = d2 * 3;
+        p3 = d3 * 2;
+        p4 = d4 * 7;
+        p5 = d5 * 6;
+        p6 = d6 * 5;
+        p7 = d7 * 4;
+        p8 = d8 * 3;
+        p9 = d9 * 2;
+    }
+
+    suma = p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8 + p9;
+    residuo = suma % modulo;
+
+    /* Si residuo=0, dig.ver.=0, caso contrario 10 - residuo*/
+    digitoVerificador = residuo == 0 ? 0 : modulo - residuo;
+
+    var b = 0;
+    /* ahora comparamos el elemento de la posicion 10 con el dig. ver.*/
+    if (pub == true) {
+
+        if (digitoVerificador != d9) {
+            alert('El ruc de la empresa del sector público es incorrecto.');
+            b = 1;
+        }
+        /* El ruc de las empresas del sector publico terminan con 0001*/
+        if (numero.substr(9, 4) != '0001') {
+            alert('El ruc de la empresa del sector público debe terminar con 0001');
+            b = 1;
+        }
+        if (b == 0) {
+            b = 2;
+        }
+    }
+    else if (ju == true) {
+        if (digitoVerificador != d10) {
+            alert('El ruc de la empresa del sector privado o Juridico es incorrecto.');
+            b = 1;
+        }
+        if (numero.substr(10, 3) != '001') {
+            alert('El ruc de la empresa del sector privado  o Juridico debe terminar con 001');
+            b = 1;
+        }
+        if (b == 0) {
+            b = 3;
+        }
+    }
+
+    else if (nat == true) {
+
+        if (digitoVerificador != d10) {
+            alert('El número de cédula de la persona natural es incorrecto.');
+
+            b = 1;
+        }
+        if (numero.length > 10 && numero.substr(10, 3) != '001') {
+            alert('El ruc de la persona natural debe terminar con 001');
+            b = 1;
+        }
+        if (b == 0 && numero.length > 10) {
+            b = 4;
+        } else if (b == 0 && numero.length == 10) {
+            b = 5;
+
+        }
+
+    }
+    if (b != 0 && b != 1) {
+        return b;
+    } else {
+        $("#natural").hide();
+        $("#natural_domicilio").hide();
+        $("#juridico").hide();
+        $("#dato_solicitud").hide();
+        $("#dato_observacion").hide();
+        $("#dato_laborales").hide();
+    }
+
+
+}
+
+function PedirConfirmacion(id, dato) {
+    swal({
+            title: "¿Estas seguro de realizar esta accion?",
+            text: "Al confirmar se grabaran los datos exitosamente",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Si!",
+            cancelButtonText: "No",
+            closeOnConfirm: true,
+            closeOnCancel: false
+        },
+        function (isConfirm) {
+            if (isConfirm) {
+                switch (dato) {
+                    case "save":
+                        SaveChanges();
+                        break;
+
+                    case "delete":
+                        DeleteChanges(id);
+                        break;
+                }
+            } else {
+                swal("¡Cancelado!", "No se registraron cambios...", "error");
+            }
+        });
+}

@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://nextcore.core/asesor/SolicitudesIndex# -->
+<html lang="en" style="height: auto;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<title>
+    NextCore
+</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+<!-- Tell the browser to be responsive to screen width -->
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="./NextCore_files/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="./NextCore_files/ionicons.min.css">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link href="./NextCore_files/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./NextCore_files/select2.min.css">
+<link href="./NextCore_files/AdminLTE.min.css" rel="stylesheet">
+<link href="./NextCore_files/pnotify.custom.min.css" rel="stylesheet">
+<link href="./NextCore_files/skin-blue.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="./NextCore_files/jquery.dataTables.min.css">
+<link rel="stylesheet" href="./NextCore_files/select.dataTables.min.css">
+<link rel="stylesheet" href="./NextCore_files/buttons.dataTables.min.css">
+<link rel="stylesheet" href="./NextCore_files/jquery-ui-timepicker-addon.min.css">
+<link rel="stylesheet" href="./NextCore_files/bootstrap-datepicker.standalone.min.css">
+<style>
+    .dataTables_wrapper .dataTables_length {
+         float: none !important
+            ;}
+    .panel-default>.panel-heading {
+        color: #fff;
+        background-color: #5fa9d4;
+        border-color: #ddd;
+    }
+    .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+        position: relative;
+        min-height: 1px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .timeline-footer {
+        padding: 2px!important;
+    }
+    .select2-container--default .select2-selection--single,.select2-selection .select2-selection--single {
+        border:1px solid #d2d6de;
+        border-radius: 10px;
+        padding:6px 12px;
+        height:34px;
+    }
+
+    input {
+        -moz-border-radius: 10px!important;
+        -webkit-border-radius: 10px!important;
+        border-radius: 10px!important;
+        padding: 0 4px 0 4px!important;
+    }
+</style>
+    <link href="./NextCore_files/sweetalert.css" rel="stylesheet">
+    <link href="./NextCore_files/pivot.css" rel="stylesheet">
+
+</head>
+
+
+<body class="skin-blue sidebar-mini modal-open" style="height: auto; padding-right: 17px;">
+
+<div id="wrapper">
+
+<header class="main-header">
+    <!-- Logo -->
+    <a href="" class="logo" style="font-size: 16px;">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini">
+           JuridiCore</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg">
+           JuridiCore</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+  
+	  <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="http://nextcore.core/asesor/SolicitudesIndex#" class="sidebar-toggle" data-toggle="offcanvas" role="button" id="mayor">
+            <span class="sr-only">adminlte_lang::message.togglenav</span>
+        </a>
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- Messages: style can be found in dropdown.less-->
+
+                                    <!-- User Account Menu -->
+                    <li class="dropdown user user-menu">
+                        <!-- Menu Toggle Button -->
+                        <a href="http://nextcore.core/asesor/SolicitudesIndex#" class="dropdown-toggle" data-toggle="dropdown">
+                            <!-- The user image in the navbar-->
+                            <img src="./NextCore_files/avatar_plusis.png" class="user-image" alt="User Image">
+                            <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                            <span class="hidden-xs">Admin</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- The user image in the menu -->
+                            <li class="user-header">
+                                <img src="./NextCore_files/avatar_plusis.png" class="img-circle" alt="User Image">
+                                <p>
+                                    Admin
+                                </p>
+                            </li>
+                            <!-- Menu Body -->
+
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+							<div class="pull-left">
+
+                                   <a href="http://nextcore.core/change_password" class="btn btn-default btn-flat">
+                                            Cambiar Contraseña
+                                        </a>
+
+                                                                   
+
+                                </div>
+                                <div class="pull-right">
+
+                                   <a href="http://nextcore.core/logout" onclick="event.preventDefault();
+                                                     document.getElementById(&#39;logout-form&#39;).submit();" class="btn btn-default btn-flat">
+                                            Cerrar Sesión
+                                        </a>
+
+                                        <form id="logout-form" action="http://nextcore.core/logout" method="POST" style="display: none;">
+                                            <input type="hidden" name="_token" value="73OpV0eivXJOJueVB5jzuEizyN3aCEOvAVsLfjjW">
+                                        </form>
+                                
+
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                
+                <!-- Control Sidebar Toggle Button -->
+
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<!-- Left side column. contains the sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar" style="height: auto;">
+ <ul class="sidebar-menu">
+		  <li class="header">Sistemas PublyNext</li>
+																			<li class="treeview">
+                <a href="http://nextcore.core/asesor/SolicitudesIndex#">
+                    <i class="fa fa-users"></i>
+                    <span class="title">Administrador</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+			                                   
+					<li>
+                        <a href="http://nextcore.core/admin/roles">
+                            <i class="fa fa-briefcase"></i>
+                            <span class="title">
+                                Roles
+                            </span>
+                        </a>
+                    </li>
+                                                               
+					<li>
+                        <a href="http://nextcore.core/admin/users">
+                            <i class="fa fa-briefcase"></i>
+                            <span class="title">
+                                Usuarios
+                            </span>
+                        </a>
+                    </li>
+                                                               
+					<li>
+                        <a href="http://nextcore.core/admin/MenuCreate">
+                            <i class="fa fa-briefcase"></i>
+                            <span class="title">
+                                Menu
+                            </span>
+                        </a>
+                    </li>
+                                                               
+					<li>
+                        <a href="http://nextcore.core/admin/ParametroIndex">
+                            <i class="fa fa-briefcase"></i>
+                            <span class="title">
+                                Parametros
+                            </span>
+                        </a>
+                    </li>
+                                               
+                </ul>
+            </li>
+
+																			<li class="treeview">
+                <a href="http://nextcore.core/asesor/SolicitudesIndex#">
+                    <i class="fa fa-users"></i>
+                    <span class="title">Reporteria</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+			                                   
+					<li>
+                        <a href="http://nextcore.core/reporte/ReporteIndex">
+                            <i class="fa fa-briefcase"></i>
+                            <span class="title">
+                                Reporte D
+                            </span>
+                        </a>
+                    </li>
+                                               
+                </ul>
+            </li>
+
+																			<li class="treeview">
+                <a href="http://nextcore.core/asesor/SolicitudesIndex#">
+                    <i class="fa fa-users"></i>
+                    <span class="title">Solicitudes</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+			                                   
+					<li>
+                        <a href="http://nextcore.core/asesor/SolicitudesIndex">
+                            <i class="fa fa-briefcase"></i>
+                            <span class="title">
+                                Mis Solicitudes
+                            </span>
+                        </a>
+                    </li>
+                                                               
+					<li>
+                        <a href="http://nextcore.core/lider/SeguimientoIndex">
+                            <i class="fa fa-briefcase"></i>
+                            <span class="title">
+                                Seguimiento de Solicitudes
+                            </span>
+                        </a>
+                    </li>
+                                               
+                </ul>
+            </li>
+
+																				
+        </ul>
+    </section>
+</aside>
+
+
+<!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 210px;">
+        <!-- Main content -->
+        <section class="content">
+            
+            <div class="row">
+                <div class="col-md-12">
+
+                                        <!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+                <small></small>
+    </h1>
+</section>
+                    <div class="col-lg-2" style="float:right">
+
+    <a href="http://nextcore.core/asesor/SolicitudesIndex#" data-hover="tooltip" data-placement="top" class="btn btn-primary" data-target="#Modalagregar" data-toggle="modal" id="modal">Nuevo</a>
+</div>
+<hr>
+
+<div class="modal fade in" id="Modalagregar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: block;">
+    <div class="modal-dialog" style="width: 100%" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Agregar Datos</h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="tabbable" id="tabs-580793">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="http://nextcore.core/asesor/SolicitudesIndex#panel-1" data-toggle="tab" aria-expanded="false">Datos
+                                                Generales</a>
+                                        </li>
+                                        <li class="nav-item active" id="dato_solicitud" style="display: block;">
+                                            <a class="nav-link active" href="http://nextcore.core/asesor/SolicitudesIndex#panel-2" data-toggle="tab" aria-expanded="true">Datos de
+                                                Solicitud</a>
+                                        </li>
+
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane" id="panel-1">
+                                            <div class="form-group">
+                                                <div class="col-lg-12">
+
+                                                    <ul class="timeline">
+
+                                                        <!-- timeline time label -->
+                                                        <li class="time-label">
+
+                                                        </li>
+                                                        <!-- /.timeline-label -->
+
+                                                        <!-- timeline item -->
+                                                        <li>
+                                                            <!-- timeline icon -->
+                                                            <i class="fa bg-blue"><b>1</b></i>
+                                                            <div class="timeline-item">
+
+                                                                <div class="timeline-body">
+                                                                    <div id="cabecera">
+                                                                        <div class="timeline-header">
+                                                                            <div class="container">
+                                                                                <div class="col-lg-12">
+                                                                                    <div class="col-lg-2">
+
+                                                                                        <h4><strong>
+                                                                                                <a href="http://nextcore.core/asesor/SolicitudesIndex#">Datos Generales</a>
+                                                                                            </strong>
+                                                                                        </h4>
+                                                                                    </div>
+
+                                                                                    <div class="col-lg-2">
+                                                                                        <input style="" required="required" maxlength="13" class="form-control col-lg-2" placeholder="Digite la identificación" name="identificacion" type="text">
+                                                                                    </div>
+                                                                                    <div class="col-lg-2">
+                                                                                        <input style="" required="required" class="form-control" placeholder="Tipo persona" disabled="" name="tipo_persona" type="text">
+
+                                                                                    </div>
+                                                                                   <p>
+                                                                                       &nbsp;
+                                                                                   </p>
+                                                                                    <br>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div id="natural" style="display: block;">
+                                                                            <div class="container-fluid">
+
+                                                                            <div class="col-lg-12 form-group">
+
+                                                                                <div class="col-lg-3">
+                                                                                    <input required="required" class="form-control" placeholder="Nombres Completo" name="dato_natural[]" type="text">
+
+                                                                                </div>
+                                                                                <div class="col-lg-3">
+                                                                                    <input required="required" class="form-control" placeholder="Correo Electronico" name="dato_natural[]" type="email">
+
+                                                                                </div>
+                                                                                <div class="col-lg-3">
+                                                                                    <input class="form-control pickadate" id="fechai" placeholder="Fecha de Nacimiento" name="dato_natural[]" type="text" value="">
+
+                                                                                </div>
+                                                                                <div class="col-lg-3">
+                                                                                    <select class="form-control select2" style="width: 100%; display: none;" name="dato_natural[]" tabindex="-1"><option selected="selected" value="">ESTADO CIVIL</option><option value="SOLTER@">SOLTER@</option><option value="CASAD@">CASAD@</option><option value="Divorciad@">DIVORCIAD@</option><option value="UNION_LIBRE">UNION LIBRE</option></select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" aria-owns="select2-dato_natural[]-wm-results" aria-labelledby="select2-dato_natural[]-wm-container"><span class="select2-selection__rendered" id="select2-dato_natural[]-wm-container">ESTADO CIVIL</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"><span class="select2-dropdown select2-dropdown--below" dir="ltr"><span class="select2-search select2-search--dropdown"><input class="select2-search__field" type="search" tabindex="-1" role="textbox"></span><span class="select2-results"><ul class="select2-results__options" role="tree" id="select2-dato_natural[]-wm-results"></ul></span></span></span></span>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div id="juridico" style="display: none;">
+                                                                        <div class="container-fluid">
+                                                                            <div class="col-lg-12 form-group">
+
+                                                                                <div class="col-lg-4">
+                                                                                    <input required="required" class="form-control" placeholder="Razon Social" name="dato_juridico[]" type="text">
+
+                                                                                </div>
+                                                                                <div class="col-lg-4">
+                                                                                    <input required="required" class="form-control" placeholder="Cedula del Representante Legal" name="dato_juridico[]" maxlength="10" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;" type="text">
+
+                                                                                </div>
+                                                                                <div class="col-lg-4">
+                                                                                    <input class="form-control pickadate" id="fechai" placeholder="Fecha de vencimiento" name="dato_juridico[]" type="text" value="">
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-lg-12 form-group">
+
+                                                                                <div class="col-lg-4">
+                                                                                    <input required="required" class="form-control" placeholder="Correo Electronico" name="dato_juridico[]" type="email">
+
+                                                                                </div>
+                                                                                <div class="col-lg-4">
+                                                                                    <input required="required" class="form-control" placeholder="Nombre del Representante Legal" name="dato_juridico[]" type="text">
+
+                                                                                </div>
+                                                                                <div class="col-lg-4">
+                                                                                    <input required="required" class="form-control" placeholder="Cargo del Representante Legal" name="dato_juridico[]" type="text">
+
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="natural_domicilio" style="display: block;">
+                                                                        <div class="timeline-header">
+                                                                            <div class="container" style="margin-left:10px"><h4><strong>
+                                                                                        <a href="http://nextcore.core/asesor/SolicitudesIndex#">Domicilio</a>
+                                                                                    </strong>
+                                                                                </h4>
+                                                                                <br>
+
+                                                                            </div>
+                                                                        </div>
+
+                                                                      <div class="container-fluid">
+                                                                          <div class="col-lg-12 form-group">
+
+                                                                              <div class="col-lg-6">
+                                                                                  <input class="form-control" placeholder="Ingrese el Domicilio" name="dato_natural[]" type="text">
+
+                                                                              </div>
+                                                                              <div class="col-lg-6">
+                                                                                  <input class="form-control" placeholder="Ingrese la referencia del domicilio" name="dato_natural[]" type="text">
+
+                                                                              </div>
+                                                                          </div>
+
+                                                                          <div class="col-lg-12 form-group">
+
+                                                                              <div class="col-lg-2">
+                                                                                  <input required="required" class="form-control" placeholder="Convencional" name="dato_natural[]" maxlength="10" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;" type="text">
+
+                                                                              </div>
+                                                                              <div class="col-lg-2">
+                                                                                  <select class="form-control select2" style="width: 100%; display: none;" name="dato_natural[]" tabindex="-1"><option selected="selected" value="">PERTENECIENTE A:</option><option value="CLIENTE">CLIENTE</option><option value="AMIGO">AMIGO</option><option value="FAMILIAR">FAMILIAR</option></select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" aria-owns="select2-dato_natural[]-dc-results" aria-labelledby="select2-dato_natural[]-dc-container"><span class="select2-selection__rendered" id="select2-dato_natural[]-dc-container">PERTENECIENTE A:</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"><span class="select2-dropdown select2-dropdown--below" dir="ltr"><span class="select2-search select2-search--dropdown"><input class="select2-search__field" type="search" tabindex="-1" role="textbox"></span><span class="select2-results"><ul class="select2-results__options" role="tree" id="select2-dato_natural[]-dc-results"></ul></span></span></span></span>
+
+                                                                              </div>
+                                                                              <div class="col-lg-2">
+                                                                                  <input required="required" class="form-control" placeholder="Celular" name="dato_natural[]" maxlength="10" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;" type="text">
+
+                                                                              </div>
+                                                                              <div class="col-lg-3">
+                                                                                  <select class="form-control select2" style="width: 100%; display: none;" name="dato_natural[]" tabindex="-1"><option selected="selected" value="">PROVINCIA</option><option value="45">GUAYAS</option><option value="44">LOS RIOS</option></select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" aria-owns="select2-dato_natural[]-n0-results" aria-labelledby="select2-dato_natural[]-n0-container"><span class="select2-selection__rendered" id="select2-dato_natural[]-n0-container">PROVINCIA</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"><span class="select2-dropdown select2-dropdown--below" dir="ltr"><span class="select2-search select2-search--dropdown"><input class="select2-search__field" type="search" tabindex="-1" role="textbox"></span><span class="select2-results"><ul class="select2-results__options" role="tree" id="select2-dato_natural[]-n0-results"></ul></span></span></span></span>
+                                                                              </div>
+                                                                              <div class="col-lg-3">
+                                                                                  <select class="form-control select2" style="width: 100%; display: none;" name="dato_natural[]" tabindex="-1"><option selected="selected" value="">CIUDAD</option><option value="26">GUAYAQUIL</option><option value="27">QUITO</option></select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" aria-owns="select2-dato_natural[]-xc-results" aria-labelledby="select2-dato_natural[]-xc-container"><span class="select2-selection__rendered" id="select2-dato_natural[]-xc-container">CIUDAD</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"><span class="select2-dropdown select2-dropdown--below" dir="ltr"><span class="select2-search select2-search--dropdown"><input class="select2-search__field" type="search" tabindex="-1" role="textbox"></span><span class="select2-results"><ul class="select2-results__options" role="tree" id="select2-dato_natural[]-xc-results"></ul></span></span></span></span>
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                    </div>
+                                                                    <div id="dato_laborales" style="display: block;">
+
+                                                                        <div class="timeline-header">
+
+                                                                            <div class="container" style="margin-left:10px">
+
+                                                                                <h4><strong>
+
+                                                                                        <a href="http://nextcore.core/asesor/SolicitudesIndex#">Datos Laborales</a>
+                                                                                    </strong>
+                                                                                </h4>
+                                                                                <br>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="container-fluid">
+
+                                                                        <div class="col-lg-12 form-group">
+                                                                            <div class="col-lg-3">
+                                                                                <input class="form-control" placeholder="Razon Social" name="dato_laborales[]" type="text">
+
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <input class="form-control" placeholder="Ingrese Dirección" name="dato_laborales[]" type="text">
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <select class="form-control select2" style="width: 100%; display: none;" name="dato_laborales[]" tabindex="-1"><option selected="selected" value="">PROVINCIA</option><option value="45">GUAYAS</option><option value="44">LOS RIOS</option></select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" aria-owns="select2-dato_laborales[]-im-results" aria-labelledby="select2-dato_laborales[]-im-container"><span class="select2-selection__rendered" id="select2-dato_laborales[]-im-container">PROVINCIA</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"><span class="select2-dropdown select2-dropdown--below" dir="ltr"><span class="select2-search select2-search--dropdown"><input class="select2-search__field" type="search" tabindex="-1" role="textbox"></span><span class="select2-results"><ul class="select2-results__options" role="tree" id="select2-dato_laborales[]-im-results"></ul></span></span></span></span>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <select class="form-control select2" style="width: 100%; display: none;" name="dato_laborales[]" tabindex="-1"><option selected="selected" value="">CIUDAD</option><option value="26">GUAYAQUIL</option><option value="27">QUITO</option></select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" aria-owns="select2-dato_laborales[]-yf-results" aria-labelledby="select2-dato_laborales[]-yf-container"><span class="select2-selection__rendered" id="select2-dato_laborales[]-yf-container">CIUDAD</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"><span class="select2-dropdown select2-dropdown--below" dir="ltr"><span class="select2-search select2-search--dropdown"><input class="select2-search__field" type="search" tabindex="-1" role="textbox"></span><span class="select2-results"><ul class="select2-results__options" role="tree" id="select2-dato_laborales[]-yf-results"></ul></span></span></span></span>
+
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-lg-12 form-group">
+
+                                                                            <div class="col-lg-3">
+                                                                                <input required="required" class="form-control" placeholder="Convencional" maxlength="10" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;" name="dato_laborales[]" type="text">
+
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <input required="required" class="form-control" placeholder="Cargo" name="dato_laborales[]" type="text">
+
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <input required="required" class="form-control" placeholder="Tiempo Laboral" name="dato_laborales[]" type="text">
+
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <input required="required" class="form-control" placeholder="Ingresos" maxlength="10" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;" name="dato_laborales[]" type="text">
+
+                                                                            </div>
+
+                                                                        </div>
+                                                                        </div>
+                                                                        <div class="timeline-footer">
+                                                                            &nbsp;
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </li>
+                                                        <li id="domicilio_entrega" style="display: list-item;">
+                                                            <!-- timeline icon -->
+                                                            <i class="fa bg-blue"><b>2</b></i>
+                                                            <div class="timeline-item">
+
+                                                                <div class="timeline-body">
+                                                                    <div id="dato_laborales">
+
+                                                                        <div class="timeline-header">
+
+                                                                            <div class="container" style="margin-left:10px">
+
+                                                                                <h4><strong>
+
+                                                                                        <a href="http://nextcore.core/asesor/SolicitudesIndex#">Datos de Entrega de Contrato</a>
+                                                                                    </strong>
+                                                                                </h4>
+                                                                                <br>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="container-fluid">
+
+                                                                            <div class="col-lg-12 form-group">
+
+                                                                                <div class="col-lg-12">
+                                                                                    <input class="form-control" placeholder="Ingrese la Direccion de Entrega" name="dato_entrega[]" type="text">
+
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                            <div class="col-lg-12 form-group">
+
+
+                                                                                <div class="col-lg-4">
+                                                                                    <input required="required" class="form-control" placeholder="Celular" name="dato_entrega[]" maxlength="10" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;" type="text">
+
+                                                                                </div>
+                                                                                <div class="col-lg-4">
+                                                                                    <select class="form-control select2" style="width: 100%; display: none;" name="dato_entrega[]" tabindex="-1"><option selected="selected" value="">REGION</option><option value="R1">R1</option><option value="R2">R2</option></select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" aria-owns="select2-dato_entrega[]-cl-results" aria-labelledby="select2-dato_entrega[]-cl-container"><span class="select2-selection__rendered" id="select2-dato_entrega[]-cl-container">REGION</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"><span class="select2-dropdown select2-dropdown--below" dir="ltr"><span class="select2-search select2-search--dropdown"><input class="select2-search__field" type="search" tabindex="-1" role="textbox"></span><span class="select2-results"><ul class="select2-results__options" role="tree" id="select2-dato_entrega[]-cl-results"></ul></span></span></span></span>
+
+
+                                                                                </div>
+                                                                                <div class="col-lg-4">
+                                                                                    <select class="form-control select2" style="width: 100%; display: none;" name="dato_entrega[]" tabindex="-1"><option selected="selected" value="">PROVINCIA</option><option value="45">GUAYAS</option><option value="44">LOS RIOS</option></select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" aria-owns="select2-dato_entrega[]-x6-results" aria-labelledby="select2-dato_entrega[]-x6-container"><span class="select2-selection__rendered" id="select2-dato_entrega[]-x6-container">PROVINCIA</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"><span class="select2-dropdown select2-dropdown--below" dir="ltr"><span class="select2-search select2-search--dropdown"><input class="select2-search__field" type="search" tabindex="-1" role="textbox"></span><span class="select2-results"><ul class="select2-results__options" role="tree" id="select2-dato_entrega[]-x6-results"></ul></span></span></span></span>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="timeline-footer">
+                                                                            &nbsp;
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </li>
+                                                        <li id="dato_observacion" style="display: list-item;">
+                                                            <!-- timeline icon -->
+                                                            <i class="fa bg-blue"><b>3</b></i>
+                                                            <div class="timeline-item">
+
+                                                                <div class="timeline-body">
+                                                                    <div id="dato_observacion">
+
+                                                                        <div class="timeline-header">
+
+                                                                            <div class="container" style="margin-left:10px">
+
+                                                                                <div class="col-lg-12">
+                                                                                    <div class="col-lg-3">
+
+                                                                                        <h4><strong>
+                                                                                                <a href="http://nextcore.core/asesor/SolicitudesIndex#">Observaciones</a>
+                                                                                            </strong>
+                                                                                        </h4>
+                                                                                    </div>
+
+                                                                                    <div class="col-lg-9">
+                                                                                        <input class="form-control" placeholder="Ingrese Observación" name="observacion" type="text">
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="container-fluid">
+                                                                    <div id="dato_observacion2" style="display: block;">
+
+                                                                        <div class="timeline-header">
+
+                                                                            <div class="container" style="margin-left:0px">
+                                                                                <div class="col-lg-12">
+                                                                                    <div class="col-lg-3">
+
+                                                                                        <h4><strong>
+                                                                                                <a href="http://nextcore.core/asesor/SolicitudesIndex#">Datos de Asesor/Gestor</a>
+                                                                                            </strong>
+                                                                                        </h4>
+                                                                                    </div>
+
+                                                                                    <div class="col-lg-5">
+                                                                                        <label>Asesor</label>
+                                                                                        <input class="form-control " placeholder="usuario" disabled="" name="usuario" type="text" value="Espinoza Anthony">
+                                                                                    </div>
+                                                                                    <div class="col-lg-4">
+                                                                                        <label>Gestor</label>
+
+                                                                                        <select class="form-control select2" style="width: 100%; display: none;" name="gestor" tabindex="-1"><option selected="selected" value="">Seleccione un Gestor</option><option value="0000000000000">aa tony</option><option value="0926339730">Espinoza Anthony</option></select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" aria-owns="select2-gestor-vf-results" aria-labelledby="select2-gestor-vf-container"><span class="select2-selection__rendered" id="select2-gestor-vf-container">Seleccione un Gestor</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"><span class="select2-dropdown select2-dropdown--below" dir="ltr"><span class="select2-search select2-search--dropdown"><input class="select2-search__field" type="search" tabindex="-1" role="textbox"></span><span class="select2-results"><ul class="select2-results__options" role="tree" id="select2-gestor-vf-results"></ul></span></span></span></span>
+
+                                                                                    </div>
+
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="timeline-footer">
+                                                                            &nbsp;
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="tab-pane  active" id="panel-2">
+                                            <div class="form-group">
+                                                <div class="col-lg-12">
+
+                                                    <ul class="timeline">
+
+                                                        <!-- timeline time label -->
+                                                        <li class="time-label">
+
+                                                        </li>
+                                                        <li id="forma_pago">
+                                                            <!-- timeline icon -->
+                                                            <i class="fa bg-blue"><b>5</b></i>
+                                                            <div class="timeline-item">
+
+                                                                <div class="timeline-body">
+
+                                                                        <div class="timeline-header" style="padding:25px 25px 30px 25px">
+
+                                                                            <div class="container" style="margin-left:10px">
+
+                                                                                <div class="col-lg-12">
+                                                                                    <div class="col-lg-3"><a href="http://nextcore.core/asesor/SolicitudesIndex#" style="">Datos
+                                                                                            de
+                                                                                            Forma de pago</a>
+                                                                                    </div>
+                                                                                    <div class="col-lg-4">
+                                                                                        <select style="width: 100%; display: none;" class="form-control select2" name="forma_pago" onchange="obtienedatos()" tabindex="-1"><option selected="selected" value="">FORMA DE PAGO</option><option value="DEBITO_BANCARIO">DEBITO BANCARIO</option><option value="TARJETA_CREDITO">TARJETA DE CREDITO</option><option value="CONTRAFACTURA">CONTRAFACTURA</option></select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" aria-owns="select2-forma_pago-c8-results" aria-labelledby="select2-forma_pago-c8-container"><span class="select2-selection__rendered" id="select2-forma_pago-c8-container">FORMA DE PAGO</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"><span class="select2-dropdown select2-dropdown--below" dir="ltr"><span class="select2-search select2-search--dropdown"><input class="select2-search__field" type="search" tabindex="-1" role="textbox"></span><span class="select2-results"><ul class="select2-results__options" role="tree" id="select2-forma_pago-c8-results"></ul></span></span></span></span>
+
+                                                                                    </div>
+
+                                                                                    <div id="contrafactura" class="col-lg-5" style="display: none;">
+
+                                                                                        <div class="col-lg-1">
+                                                                                            <input checked="checked" name="deposito_garantia" type="checkbox" value="1">
+                                                                                        </div>
+
+                                                                                        <div class="col-lg-4">
+                                                                                            <label>Deposito/Garantia</label>
+                                                                                        </div>
+                                                                                        <div class="col-lg-12">
+                                                                                            <input required="required" class="form-control" placeholder="Valor de Garantía" maxlength="5" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;" name="valor_garantia" type="text" value="0">
+
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                    <br>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="container-fluid">
+                                                                            <div id="debito" style="display: none;">
+                                                                                <div class="col-lg-12 form-group">
+
+                                                                                    <div class="col-lg-4">
+                                                                                        <select class="form-control select2" style="width: 100%; display: none;" name="banco[]" tabindex="-1"><option selected="selected" value="">BANCO</option><option value="49">BOLIVARIANO</option><option value="48">GUAYAQUIL</option><option value="47">PICHINCHA</option></select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" aria-owns="select2-banco[]-bb-results" aria-labelledby="select2-banco[]-bb-container"><span class="select2-selection__rendered" id="select2-banco[]-bb-container">BANCO</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"><span class="select2-dropdown select2-dropdown--below" dir="ltr"><span class="select2-search select2-search--dropdown"><input class="select2-search__field" type="search" tabindex="-1" role="textbox"></span><span class="select2-results"><ul class="select2-results__options" role="tree" id="select2-banco[]-bb-results"></ul></span></span></span></span>
+
+                                                                                    </div>
+                                                                                    <div class="col-lg-4">
+                                                                                        <select class="form-control select2" style="width: 100%; display: none;" name="banco[]" tabindex="-1"><option selected="selected" value="">TIPO DE CUENTA</option><option value="AHORRO">AHORRO</option><option value="CORRIENTE">CORRIENTE</option></select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" aria-owns="select2-banco[]-w3-results" aria-labelledby="select2-banco[]-w3-container"><span class="select2-selection__rendered" id="select2-banco[]-w3-container">TIPO DE CUENTA</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"><span class="select2-dropdown select2-dropdown--below" dir="ltr"><span class="select2-search select2-search--dropdown"><input class="select2-search__field" type="search" tabindex="-1" role="textbox"></span><span class="select2-results"><ul class="select2-results__options" role="tree" id="select2-banco[]-w3-results"></ul></span></span></span></span>
+
+                                                                                    </div>
+                                                                                    <div class="col-lg-4">
+                                                                                        <input required="required" class="form-control" placeholder="NUMERO DE CUENTA" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;" name="banco[]" type="text">
+
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <div id="tarjeta" style="display: none;">
+                                                                                <div class="col-lg-12 form-group" id="tarjeta">
+
+                                                                                    <div class="col-lg-3">
+                                                                                        <input required="required" class="form-control" placeholder="Nombre de la tarjeta" name="tarjeta[]" type="text">
+
+                                                                                    </div>
+                                                                                    <div class="col-lg-3">
+                                                                                        <input required="required" class="form-control" placeholder="Numero de la tarjeta" name="tarjeta[]" type="text">
+
+                                                                                    </div>
+                                                                                    <div class="col-lg-3">
+                                                                                        <input required="required" class="form-control" placeholder="Codigo de Seguridad de la tarjeta" name="tarjeta[]" type="text">
+
+                                                                                    </div>
+                                                                                    <div class="col-lg-3">
+                                                                                        <input class="form-control pickadate" id="fechai" placeholder="Fecha de Caducidad" name="tarjeta[]" type="text" value="">
+
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="timeline-footer">
+                                                                            &nbsp;
+                                                                        </div>
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </li>
+                                                        <li id="lineas">
+                                                            <!-- timeline icon -->
+                                                            <i class="fa bg-blue"><b>5</b></i>
+                                                            <div class="timeline-item">
+
+                                                                <div class="timeline-body">
+
+                                                                    <div class="timeline-header" style="padding:25px 25px 15px 25px">
+
+                                                                        <div class="container" style="margin-left:10px">
+
+                                                                            <div class="col-lg-12">
+                                                                                <div class="col-lg-2"><a href="http://nextcore.core/asesor/SolicitudesIndex#" style="">Datos
+                                                                                        de
+                                                                                        Solicitud</a>
+                                                                                </div>
+                                                                                <div class="col-lg-2">
+                                                                                    <label>N°  Solicitud</label>
+                                                                                    <input class="form-control" placeholder="N° Solicitud" disabled="" name="n_solicitud" type="text" value="100001">
+
+                                                                                </div>
+                                                                                <div class="col-lg-2">
+                                                                                    <label>Total de Lineas</label>
+
+                                                                                    <input class="form-control" placeholder="lineas" disabled="" name="tlineas" type="text" value="0">
+
+                                                                                </div>
+                                                                                <div class="col-lg-2">
+                                                                                    <label>Total de Obsequios</label>
+
+                                                                                    <input class="form-control " placeholder="obsequios" disabled="" name="tobsequios" type="text" value="0">
+
+                                                                                </div>
+                                                                                <div class="col-lg-2">
+                                                                                    <label>Total de Chip Obsequio</label>
+
+                                                                                    <input class="form-control " placeholder="Chip a Obsequiar" name="tchip" maxlength="2" min="0" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;" type="number" value="0">
+
+                                                                                </div>
+                                                                                <div class="col-lg-1">
+                                                                                    <a href="http://nextcore.core/asesor/SolicitudesIndex#" style="float:right" onclick="Add();">
+                                                                                        <i class="fa fa-plus">&nbsp; </i>
+                                                                                    </a>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="container-fluid">
+                                                                        <div id="item">
+
+
+                                                                        <div style="margin:2px"><div class="col-lg-12" style="margin:10px" name="addditem[1]"><div class="col-lg-2" name="adddtipo_solicitud[1]"><select class="form-control select2" style="border-radius: 10px" name="addtipo_solicitud[1]" onchange="obtienedatos(1)"><option class="form-control select2" value="0">Seleccione un tipo de solicitud</option><option class="form-control select2" value="Linea_Nueva">Linea Nueva</option><option class="form-control select2" value="Migracion">Migracion</option><option class="form-control select2" value="Transferencia_Beneficiario">Transferencia Beneficiario</option><option class="form-control select2" value="Portabilidad">Portabilidad</option></select></div><div class="col-lg-2" name="adddcelular[1]" '=""><input class="form-control" type="text" name="addcelular[1]" placeholder="Celular" maxlength="10" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;"></div><div class="col-lg-2" name="adddoperadora[1]"><select class="form-control select2" style="border-radius: 10px" name="addoperadora[1]"><option class="form-control select2" value="0">Operadora</option><option class="form-control select2" value="Claro">Claro</option><option class="form-control select2" value="Movistar">Movistar</option><option class="form-control select2" value="Cnt">Cnt</option><option class="form-control select2" value="Twenty">Twenty</option></select></div><div class="col-lg-2" name="adddtipo_linea[1]"><select class="form-control select2" style="border-radius: 10px" name="addtipo_linea[1]"><option class="form-control select2" value="0">Linea</option><option class="form-control select2" value="Prepago">Prepago</option><option class="form-control select2" value="Pospago">Pospago</option><option class="form-control select2" value="Migracion">Migracion</option></select></div><div class="col-lg-1" name="addconsultaequipo[1]"><label style="padding-left:5px;padding-right:5px;" name="addlabelequipo[1]">Equipo</label> <input type="checkbox" name="addequipo[1]" onclick="checkequipo(1)"></div><div class="col-lg-1" name="adddmarca[1]"><input class="form-control" type="text" name="addmarca[1]" placeholder="marca" style="display: none;"></div><div class="col-lg-1" name="adddmodelo[1]"><input class="form-control" type="text" name="addmodelo[1]" placeholder="modelo" style="display: none;"></div></div><div style="margin:2px"><div class="col-lg-12" name="adddselectbp[1]"><div class="col-lg-2" name="addselectbp[1]"><select class="form-control select2" style="border-radius: 10px" name="addbp[1]" onchange="obtienedatoselect(1)"><option value="0">* BP *</option><option value="20">BP-001</option><option value="28">BP-002</option></select></div><div class="col-lg-2" name="addconsultabp[1]"><input class="form-control" type="text" name="addplan[1]" placeholder="Plan" disabled=""></div><div class="col-lg-2" name="addconsultatb[1]"><input class="form-control" type="text" name="addtb[1]" placeholder="Tarifa" disabled=""></div><div class="col-lg-2" name="addconsultacuota[1]"><input class="form-control" type="text" maxlength="5" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;" name="addcuota[1]" id="addcuota[1]" placeholder="Cuota"></div><div class="col-lg-2" name="addconsultaobsequio[1]" style="padding-right:0px!important;"><select class="form-control select2" style="border-radius: 10px" name="addobsequio[1]"><option class="form-control select2" value="0">Obsequio</option><option class="form-control select2" value="1">Agenda Guayaquil </option><option class="form-control select2" value="2">Spinner</option><option class="form-control select2" value="3">Tasa</option></select></div><div class="col-lg-1" name="addconsultacob[1]"><input class="form-control" type="number" maxlength="1" min="0" max="2" value="0" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;" name="addcantob[1]" placeholder="Cant" onchange="cantidadOb()"></div><div class="col-lg-1" name="addborra[1]"><span onclick="borraitem(1)" name="addborraspan[1]" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></span></div></div></div><div style="margin:5px"><div name="addddonante[1]" style="display: block;"><div class="col-lg-3" name="adddcidonante[1]" '=""><input class="form-control" type="text" name="addcidonante[1]" placeholder="Cedula Donante" maxlength="10" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;"></div><div class="col-lg-3" name="adddnombredonante[1]" '=""><input class="form-control" type="text" name="addnombredonante[1]" placeholder="Nombre Donante"></div><div class="col-lg-3" name="addddirecciondonante[1]" '=""><input class="form-control" type="text" name="adddirecciondonante[1]" placeholder="Direccion Donante"></div><div class="col-lg-2" name="adddcelulardonante[1]" '=""><input class="form-control" type="text" name="adddcelulardonante[1]" placeholder="Celular Donante" maxlength="10" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;"></div></div><div name="adddrl[1]" style="display: block;"><div class="col-lg-3" name="adddctarl[1]" '=""><input class="form-control" type="text" name="addctarl[1]" placeholder="N° Cuenta" maxlength="10" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;"></div><div class="col-lg-3" name="adddcirl[1]" '=""><input class="form-control" type="text" name="addcirl[1]" placeholder="Cedula RL" maxlength="10" onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;"></div><div class="col-lg-3" name="adddnombrerl[1]" '=""><input class="form-control" type="text" name="addnombrerl[1]" placeholder="Nombre RL"></div><div class="col-lg-2" name="adddcargorl[1]" '=""><input class="form-control" type="text" name="addcargorl[1]" placeholder="Cargo RL"></div></div></div></div></div>
+                                                                    </div>
+                                                                    <div class="timeline-footer">
+                                                                        &nbsp;
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </li>
+
+
+
+                                                    </ul>
+                                                    <button type="button" class="btn btn-primary" id="btnGuardar">Pregrabado</button>
+                                                    <button type="button" class="btn btn-primary" id="btnGuardar2" style="display: none;">Grabado</button>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div style="text-align: center;">
+                    <button type="button" class="btn btn-danger" id="btnCancelar" data-dismiss="modal"><b><i class="glyphicon glyphicon-remove"></i></b> Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Consulta de datos
+    </div>
+
+    <div class="panel-body">
+
+        <table class="table table-bordered table-striped " style="width:100%!important">
+            <thead>
+
+            <tr><th>Contacto</th>
+            <th>Cliente</th>
+            <th>N° Solicitud</th>
+            <th>Asesor</th>
+            <th>Fecha/Hora Creacion</th>
+            <th>Fecha/Hora Estado</th>
+            <th>Estado</th>
+            <th>Opciones</th>
+            </tr></thead>
+            <tbody id="tbobymenu"></tbody>
+        </table>
+
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<form method="POST" action="http://nextcore.core/logout" accept-charset="UTF-8" style="display:none;" id="logout"><input name="_token" type="hidden" value="73OpV0eivXJOJueVB5jzuEizyN3aCEOvAVsLfjjW">
+<button type="submit">Logout</button>
+</form>
+
+<script src="./NextCore_files/jquery-1.11.3.min.js.descarga"></script>
+<script src="./NextCore_files/jquery.dataTables.min.js.descarga"></script>
+<script src="./NextCore_files/dataTables.buttons.min.js.descarga"></script>
+<script src="./NextCore_files/buttons.flash.min.js.descarga"></script>
+<script src="./NextCore_files/jszip.min.js.descarga"></script>
+<script src="./NextCore_files/pdfmake.min.js.descarga"></script>
+<script src="./NextCore_files/vfs_fonts.js.descarga"></script>
+<script src="./NextCore_files/buttons.html5.min.js.descarga"></script>
+<script src="./NextCore_files/buttons.print.min.js.descarga"></script>
+<script src="./NextCore_files/buttons.colVis.min.js.descarga"></script>
+<script src="./NextCore_files/dataTables.select.min.js.descarga"></script>
+<script src="./NextCore_files/bootstrap.min.js.descarga"></script>
+<script src="./NextCore_files/select2.full.min.js.descarga"></script>
+<script src="./NextCore_files/main.js.descarga"></script>
+<script type="text/javascript" src="./NextCore_files/jquery-ui.min.js.descarga"></script>
+<script type="text/javascript" src="./NextCore_files/jquery.ui.touch-punch.min.js.descarga"></script>
+
+<script src="./NextCore_files/pnotify.min.js.descarga"></script>
+<script src="./NextCore_files/sweet_alert.min.js.descarga"></script>
+
+<script src="./NextCore_files/jquery.slimscroll.min.js.descarga"></script>
+<script src="./NextCore_files/fastclick.js.descarga"></script>
+<script src="./NextCore_files/app.min.js.descarga"></script>
+<script>
+    window._token = '73OpV0eivXJOJueVB5jzuEizyN3aCEOvAVsLfjjW';
+</script>
+<script src="./NextCore_files/utils.js.descarga"></script>
+<script src="./NextCore_files/Core.js.descarga"></script>
+
+<script>
+    $.fn.select2.amd.require([
+        "select2/utils",
+        "select2/dropdown",
+        "select2/dropdown/attachContainer",
+        "select2/dropdown/search"
+    ], function (Utils, DropdownAdapter, AttachContainer, DropdownSearch) {
+        var CustomAdapter = Utils.Decorate(
+            Utils.Decorate(
+                DropdownAdapter,
+                DropdownSearch
+            ),
+            AttachContainer
+        );
+
+        $("select").select2({
+            width: "100%",
+            dropdownAdapter: CustomAdapter
+        });
+    })
+</script>
+    <script src="./NextCore_files/solicitudes.js.descarga"></script>
+    <script src="./NextCore_files/pivot.js.descarga"></script>
+    <script src="./NextCore_files/bootstrap-datepicker.js.descarga"></script>
+
+    <script>
+        $('.pickadate').datepicker({
+            formatSubmit: 'dd-mm-yyyy',
+            format: 'dd-mm-yyyy',
+            selectYears: true,
+            editable: true,
+            autoclose: true,
+            orientation: 'top'
+        });
+
+    </script>
+
+
+<div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div class="modal-backdrop fade in"></div></body></html>
